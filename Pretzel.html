@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG 16 - Peace, Justice and Strong Institutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+       
+        .top-banner {
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        
+        .navbar {
+            background: white;
+            padding: 20px 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .logo h1 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+        }
+
+       
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 80px 5%;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid #1e3a8a;
+            margin-left: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #1e3a8a;
+            color: white;
+        }
+
+       
+        .stats-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 60px 5%;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+
+        .features-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .feature-box h3 {
+            color: #1e3a8a;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            color: #64748b;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .gallery-section {
+            padding: 100px 5%;
+            background: linear-gradient(180deg, #f8f9fa 0%, white 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 50px auto 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px;
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 100px 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background: white;
+            color: #1e3a8a;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #3b82f6;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: #cbd5e1;
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-column a:hover {
+            color: #3b82f6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .features-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="top-banner">
+        🌍 RAF
+       
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">⚖️</div>
+            
+            <h1>Pretzel and Friends</h1>
+           
+        </div>
+    </nav>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Building a More Just and Peaceful World</h2>
+           
+            <p>Our organization contributes to achieving SDG 16: Peace, Justice, and Strong Institutions by promoting peaceful communities, improving access to justice, and strengthening accountable institutions. We facilitate peacebuilding workshops, community dialogues, and conflict-resolution training to reduce tensions and support social cohesion. To ensure justice for all, we provide legal assistance, conduct rights-awareness campaigns, and help vulnerable individuals navigate legal processes. We also work closely with local institutions by offering capacity-building programs that enhance transparency, ethical leadership, and anti-corruption practices. In addition, we encourage civic participation by creating platforms for community involvement in decision-making and policy discussions. Through these combined efforts, our organization actively supports the development of peaceful, just, and inclusive societies.</p>
+           
+            <div>
+                <a href="https://your-primary-link.com" class="btn-primary">Get Involved</a>
+                
+                
+                <a href="https://your-secondary-link.com" class="btn-secondary">Learn More</a>
+                
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <img src="https://scontent.fcrk2-3.fna.fbcdn.net/v/t1.15752-9/568682178_938841285190142_68858520557764105_n.jpg?stp=dst-jpg_s2048x2048_tt6&_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHn8bgaUkrmTJjnwA9WCZbqEko23ikTvDMSSjbeKRO8M3sU6KEuqN3qEzSLXWVF-16Zmd6GVbDijyXVD21ymwIs&_nc_ohc=aPTq1IOzkiMQ7kNvwEpgY18&_nc_oc=Adk9Faz18CqI-Qm4nKPLtepjGMrOZPtBkw3e5Q9qyfsrYt7Lgys1B28PJOOUqShuGQc&_nc_zt=23&_nc_ht=scontent.fcrk2-3.fna&oh=03_Q7cD3wEikXfAIMNubaMOTFp5f5xCch1_J_g31SlGa-6p_U33_g&oe=69489CCE" alt="Hero Image">
+        </div>
+    </section>
+
+   
+
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Our Key Focus Areas</h2>
+            
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🕊️</div>
+                <h3>Peace Building</h3>
+                <p>Our organization leads peacebuilding initiatives by conducting workshops, dialogue sessions, and community forums that promote understanding and prevent conflict. Through our conflict resolution programs, we train individuals in negotiation, active listening, and problem-solving so they can address disputes constructively. We also provide mediation services that offer a neutral space for conflicting parties to reach fair, lasting agreements. These efforts have reduced community tensions, strengthened relationships, and empowered people to manage conflicts peacefully—creating more stable and inclusive communities in support of SDG 16.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">⚖️</div>
+                
+                <h3>Justice & Equality</h3>
+                
+                <p>Our organization promotes justice by offering legal aid services that support individuals who cannot afford representation, ensuring they receive fair treatment within the legal system. We conduct rights-awareness campaigns that educate communities about their legal protections and empower them to speak up against injustice. Through our human rights advocacy efforts, we work to protect vulnerable groups from discrimination, abuse, and exploitation by engaging with local authorities, monitoring violations, and pushing for policy reforms. We also collaborate with justice institutions to help simplify legal processes, making them more accessible, transparent, and inclusive. By removing barriers and amplifying marginalized voices, we ensure equal access to justice and help build a system that upholds fairness and human dignity for all.</p>
+
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🏛️</div>
+                
+                <h3>Strong Institutions</h3>
+                
+                <p>Our organization helps build effective, accountable, and inclusive institutions by strengthening governance systems and promoting transparency. We provide capacity-building training for local officials and community leaders on ethical leadership, responsible decision-making, and efficient service delivery. To enhance accountability, we support the development of monitoring tools, feedback mechanisms, and anti-corruption practices that encourage transparency and responsible use of public resources. We also promote inclusiveness by creating platforms where marginalized groups can participate in consultations, planning, and policy discussions, ensuring their voices shape local decisions. Through these efforts, we help institutions become more responsive, fair, and trusted—ultimately serving all members of society.</p>
+            </div>
+
+
+            <div class="feature-box">
+                <div class="feature-icon">🤝</div>
+                
+                <h3>Community Engagement</h3>
+                
+                <p>Our organization promotes community engagement through programs that empower citizens to actively participate in local development and governance. We run workshops, awareness campaigns, and leadership trainings that equip community members with the skills to address local issues and advocate for their rights. We also collaborate with local NGOs, schools, government agencies, and civic groups to implement joint projects, share resources, and strengthen networks. These partnerships and initiatives help build a more informed, inclusive, and resilient civil society, where communities are actively involved in shaping positive social change.</p>
+
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">📚</div>
+                
+                <h3>Education & Training</h3>
+
+                
+                <p>Our organization implements educational programs, capacity-building initiatives, workshops, and training sessions designed to empower individuals and strengthen communities. We offer programs on peacebuilding, conflict resolution, human rights, civic engagement, leadership, and governance to equip participants with practical skills and knowledge. Through targeted capacity-building workshops, we enhance the abilities of community leaders, youth groups, and local organizations to address challenges, participate effectively in decision-making, and advocate for justice and inclusive development. These initiatives foster informed, skilled, and proactive citizens who contribute meaningfully to building stronger and more resilient communities.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🌐</div>
+                
+                <h3>Global Partnerships</h3>
+                
+                <p>Our organization actively engages in global partnerships and international collaborations to advance SDG 16: Peace, Justice, and Strong Institutions. We work with international NGOs, multilateral agencies, academic institutions, and advocacy networks to share knowledge, resources, and best practices. Through these partnerships, we participate in joint projects, research initiatives, and capacity-building programs that strengthen governance, promote human rights, and enhance access to justice worldwide. By collaborating across borders, we amplify our impact, foster innovation, and contribute to building peaceful, inclusive, and accountable institutions globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Our Impact in Action</h2>
+            
+            <p>See the real-world impact of our work in communities around the world.</p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://scontent.fcrk2-4.fna.fbcdn.net/v/t1.15752-9/582781371_846032825026683_4075582871049928491_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHhmi4LAbbaY5G7pH3Y01gg9QXKXUIC2kb1BcpdQgLaRoc5M-87hrOlVVT8DAewJ1wo8Bb4yyIeNUQUB3HxCK0V&_nc_ohc=AnaexsFNMrUQ7kNvwHTbdm8&_nc_oc=AdnK4ce6wI3WKyEsnctEpIIqIpmTOZLG2kOJeh9nJGACXob2vbXw3K9Mz7G7dlxJeBY&_nc_zt=23&_nc_ht=scontent.fcrk2-4.fna&oh=03_Q7cD3wEJOJy52Jp3rpZR0F1Nwjqnf3NrGB8Qn5_0UaMMTbe58g&oe=6948ADF4" alt="Gallery Image 1">
+                
+                <div class="gallery-overlay">
+                    <h3>Community Education Workshops</h3>
+                    <p> Free skill-building classes for local residents.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://scontent.fcrk2-4.fna.fbcdn.net/v/t1.15752-9/582960832_1130582212399124_6729867435497662471_n.png?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGSx0UtM1dfSjbVCuqzZsIz2QeCeoXz8-jZB4J6hfPz6MDDPqiuN0baz2gr67qZDaA7sdV5i8-M6jqRsiNgYWvk&_nc_ohc=oAj6CBsaYVYQ7kNvwEFCnEr&_nc_oc=AdnJoord3uBZEaw2golp4GpxyzLNoINUuC1p3HkeoVW2wBlxqqO805Qhi53IJitoe3o&_nc_zt=23&_nc_ht=scontent.fcrk2-4.fna&oh=03_Q7cD3wG0NZoJvtREGjiUUo4DUB_RV1ZbKxUSfC-wdC9JEzgnrg&oe=6948B42D" alt="Gallery Image 2">
+                
+                <div class="gallery-overlay">
+                    <h3> Volunteer Outreach Program</h3>
+                    <p>Mobilizing volunteers to support neighborhood needs.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://scontent.fcrk2-4.fna.fbcdn.net/v/t1.15752-9/582327486_1312134930712797_2142609853588122752_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG7Kmys_KGBCEcp699dyQsmBqxeb2wnHGQGrF5vbCccZKXFhkl4ydQd9GybmIVb0bQFiw305-_cYMJXTRwATO3E&_nc_ohc=A4qg0KlkS7cQ7kNvwFD39Hb&_nc_oc=AdkU66PoUU68D8ImUebOpXGLZEHXu1HLfNTPEWQztfd8BWzJexl9Z4gKDVvLwITzNgw&_nc_zt=23&_nc_ht=scontent.fcrk2-4.fna&oh=03_Q7cD3wGQUS4wSresoR5a0ptK9LPVAcBQL0J858kaZAVAq96Xjw&oe=6948C184" alt="Gallery Image 3">
+                
+                <div class="gallery-overlay">
+                    <h3>Youth Empowerment Initiative</h3>
+                    <p>Helping young people develop confidence and leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Make a Difference?</h2>
+            
+            <p>Join us in our mission to create a more just, peaceful, and inclusive world. Your support can help change lives.</p>
+            
+            <a href="https://www.un.org/sustainabledevelopment/peace-justice/" class="btn-white">Take Action Today</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; Pretzel, Charm, Rafael Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>
